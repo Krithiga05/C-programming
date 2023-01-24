@@ -1,0 +1,14 @@
+#include<stdio.h>
+main()
+{
+    int n,rev=0,mod;
+    printf("Enter a number : ");
+    scanf("%d",&n);
+    while(n!=0){
+    	mod=n%10;
+    	rev=rev*10+mod;
+    	n=n/10;
+	}
+	printf("Reversed number = %d",rev);
+	
+}
