@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	int octalnumber[100],i=1,j;
+	long decimalnum,remainder,quotient,octalnum=0;
+	printf("Enter a decimal number: ");
+	scanf("%d",&decimalnum);
+	quotient=decimalnum;
+	while(quotient!=0)
+	{
+		octalnumber[i++]=quotient%8;
+		quotient=quotient/8;
+	}
+	for(j=i-1;j>0;j--)
+	    octalnum=octalnum*10+octalnumber[j];
+	printf("The Octal value of the decimal number %d = %d",decimalnum,octalnum);
+}
