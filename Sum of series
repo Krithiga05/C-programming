@@ -1,0 +1,21 @@
+#include<stdio.h>
+int factorial(int n);
+int factorial(int n) {
+    if (n>=1)
+        return n*factorial(n-1);
+    else
+        return 1;
+}
+int main()
+{int n,i,facti;
+float term,sum=0,j;
+printf("Enter a number : ");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+    {facti=factorial(i);
+    j=i;
+    term=(j/facti);
+    sum=(sum+term);
+	}
+printf("The sum of first %d terms of the series = %f",n,sum);
+}
