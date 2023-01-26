@@ -1,0 +1,27 @@
+#include<stdio.h>
+main()
+{   int a[100],n,c,d,swap,S,L;
+    printf("Enter number of elements : \n");
+    scanf("%d",&n);
+    printf("Enter %d numbers :\n",n);
+    for(c=0;c<n;c++)
+        {
+        scanf("%d",&a[c]);}
+    for(c=0;c<n-1;c++)
+        {
+        for(d=0;d<n-c-1;d++)
+             {
+             if(a[d]>a[d+1])
+                  {
+                  swap=a[d];
+                  a[d]=a[d+1];
+                  a[d+1]=swap;} 
+             }
+        }
+    printf("Enter n value for the smallest number: ");
+    scanf("%d",&S);
+    printf("Enter n value for the largest number: ");
+    scanf("%d",&L);
+    printf("%d is the %dth smallest number\n",a[S-1],S);
+    printf("%d is the %dth largest number\n",a[n-L],L);
+}
