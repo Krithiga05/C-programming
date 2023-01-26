@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    int num,mod,i=0,a[50],n;
+    printf("Enter a number : ");
+    scanf("%d",&n);
+    num=n;
+    while(num>=1)
+        {if(num>10)
+            {mod=(num%10);
+            num=num/10;
+            a[i]=mod;
+            i=i+1;
+            }
+        else
+            {mod=(num%10);
+            num=num/10;
+            a[i]=mod;}
+        }
+	printf("Least significant Bit of %d is %d \n",n,a[0]);
+	printf("Most significant Bit of %d is %d",n,a[i]);
+}
