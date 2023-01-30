@@ -1,0 +1,35 @@
+#include<stdio.h>
+void add(int a,int b)
+    {float sol=a+b;
+    printf("Sum of %d and %d = %f",a,b,sol);}
+void sub(int a,int b)
+    {float sol=a-b;
+    printf("Difference of %d and %d = %f",a,b,sol);}
+void mul(int a,int b)
+    {float sol=a*b;
+    printf("Product of %d and %d = %f",a,b,sol);}
+void div(int a,int b)
+    {float sol=a/b;
+    printf("Quotient of %d / %d = %f",a,b,sol);}
+
+main()
+{  
+    int num1,num2,operation;
+	printf("Enter the coresponding number for the operation\n\t\tAddition : 1\n\t\tSubtraction :2 \n\t\tMultiplication : 3 \n\t\tDivision : 4\n");
+	printf("\n What operation do you want to perform  : ");
+	scanf("%d",&operation);
+	printf("Enter first number: ");
+	scanf("%d",&num1);
+	printf("Enter second number: ");
+	scanf("%d",&num2);
+	if(operation==1)
+	    {add(num1,num2);}
+	else if(operation==2)
+	    {sub(num1,num2);}
+	else if(operation==3)
+	    {mul(num1,num2);}
+	else if(operation==4)
+	    {div(num1,num2);}
+	else
+	    {printf("Invalid input");}	
+}
