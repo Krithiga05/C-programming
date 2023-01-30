@@ -1,0 +1,53 @@
+#include<stdio.h>
+struct EBbill
+{
+    int Serial_num;
+    char cons_name[20];
+    int cons_ebnum;
+    char cons_address[50];
+    int cons_unitsused;
+    float cons_totalamt;
+};
+int main()
+{   struct EBbill s[10];
+    int c,i,num,units;
+    float amount;
+    printf("Enter the number of consumers : ");
+    scanf("%d",&num);
+    for(c=0;c<num;c++)
+    {    
+	    printf("Enter the details of consumer %d\n",c+1);
+        s[c].Serial_num=c+1;
+        
+		printf("Enter name: \n");
+        scanf("%s",s[c].cons_name);
+   
+        printf("Enter EB number: \n");
+        scanf("%d",& s[c].cons_ebnum);
+   
+        printf("Enter Address: \n");
+        scanf("%s",s[c].cons_address);
+   
+        printf("Enter units of electricity used: \n");
+        scanf("%d",&s[c].cons_unitsused);
+		units=s[c].cons_unitsused;    
+        if(units<=100)
+            {amount=0;}
+        else if(units>100 && units<=200)
+            {amount=(units*1.5);}
+        else if(units>200 && units<=300)
+            {amount=(units*2.5);}
+        else if(units>300 && units<=400)
+            {amount=(units*3.5);}
+        else
+            {amount=(units*4.5);}
+		s[c].cons_totalamt=amount;  
+	}
+    printf("\n");
+    printf("Sno\t\tName\t\tEB no\t\t\tUnits of electricity used\t\tTotal Amount in Rs\n");
+    for(i=0;i<num;i++)
+        {
+        printf("%d\t\t%s\t\t%d\t\t\t%d\t\t\t\t%f\t\t",s[i].Serial_num,s[i].cons_name,s[i].cons_ebnum,s[i].cons_unitsused,s[i].cons_totalamt);
+        printf("\n");
+		}
+}
